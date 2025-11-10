@@ -1,0 +1,51 @@
+ce ar trebui sa contina raportul? 
+
+1) abstract 
+-ce problema avem, cum propunem sa o rezolvam, contributii proprii, rezultate
+
+2) introducere x
+-context: ecosistemul program verification; dc apar multe tools greu de urmarit
+-provocarile
+-scopul proiectului si contributiile (enumerate clar)
+-organizarea lucrarii
+
+3) descrierea problemei x
+-cateva definitii ale conceptelor problemei
+-domeniile acoperite
+-cerinte functionale minime pt fiecare tool
+-criterii de succes (masurabile) 
+
+4) ce rezolvari asemanatoare pentru problema noastra exista deja x
+-mic tabel comparativ intre abordari
+
+5) arhitectura proiectului si diagrame relevante 
+-vedere de ansamblu 
+
+6) partea de instalare a toolurilor necesare
+-prerechizite, comenzi de instalare si rulare, rularea testelor si pornirea UI
+
+7) statusul implementarii x
+-ce componente sunt deja finalizate pana in sapt 7
+-decizii tehnice si justificari
+-testare unitara
+
+8) metodologie de evaluare
+-seturi de date, proceduri, metrici
+
+9) riscuri, limitari
+
+10) concluzii si lucru viitor
+-ce a mers, ce ramane, cum continuam dupa versiunea draft
+
+11) contributiile membrilor echipei
+-tabel: nume => responsabilitatile concrete
+
+12) link github x 
+
+
+raport - lari
+interfata - paul - shadcn - frameworkuri: react
+prompt engineering - sebastian - textfile, ollama, model ai, llama 3 FB, gemma
+aplicatia conector cu llm-ul - tudor - python, fast api, ollama
+
+-fiecare lucreaza in folderul propriu pe github
