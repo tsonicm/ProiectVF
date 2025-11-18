@@ -30,3 +30,11 @@ For each tool you find, produce a row in a CSV file with the following columns:
 CSV only. Example header (must appear exactly):
 
 tool_name,category,description,main_features,supported_languages_or_models,license,last_known_update_or_version,official_website_or_repository,relevance_score
+
+STRICT OUTPUT RULES (read carefully):
+
+1. Your entire response MUST consist only of valid CSV.
+2. No explanations, no descriptions, no surrounding text, no markdown fences.
+3. Do not add clarifications, apologies, or follow-up questions.
+4. Output exactly the CSV header followed by CSV rows.
+5. If you start to generate anything else, restart and output only valid CSV.
