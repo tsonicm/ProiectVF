@@ -9,6 +9,7 @@
 ### Python
 - Create a virtual environment for python (venv preferred)
 - Activate the virtual environment
+- Before running the `fastapi dev main.py` command, in the `.env` file paste your API key for either Gemini or OpenAI
 - Run the following commands one at a time:
 ```bash
     # MacOS / Linux
