@@ -1,57 +1,69 @@
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
-async function apiFetch(path, options = {}, withAuth = false) {
-  const token = localStorage.getItem("authToken");
-
+async function apiFetch(path, options = {}) {
   const headers = {
-    "Content-Type": "application/json",
-    ...(options.headers || {})
+    ...(options.headers || {}),
   };
 
-  if (withAuth && token) {
-    headers["Authorization"] = `Bearer ${token}`;
+  const hasBody = options.body !== undefined && options.body !== null;
+  if (hasBody && !headers["Content-Type"]) {
+    headers["Content-Type"] = "application/json";
   }
 
   const res = await fetch(`${API_BASE_URL}${path}`, {
     ...options,
-    headers
+    headers,
   });
 
-  if (!res.ok) {
-    const message = await res.text();
-    throw new Error(message || "API error");
+  const text = await res.text();
+  let data;
+  try {
+    data = text ? JSON.parse(text) : null;
+  } catch {
+    data = text || null;
   }
 
-  return res.json();
+  if (!res.ok) {
+    const msg =
+      (data && typeof data === "object" && data.detail) ||
+      (typeof data === "string" && data) ||
+      `API error (${res.status})`;
+    throw new Error(msg);
+  }
+
+  return data;
 }
 
 export function getApprovedTools() {
   return apiFetch("/api/tools/approved");
 }
 
-export function adminLogin(username, password) {
-  return apiFetch("/api/admin/login", {
+export function suggestTools({ max_tools = 10, date = null } = {}) {
+  const payload = { max_tools };
+  if (date) payload.date = date;
+
+  return apiFetch("/api/tools/suggest", {
     method: "POST",
-    body: JSON.stringify({ username, password })
+    body: JSON.stringify(payload),
+  });
+}
+
+export function savePendingTools(tools) {
+  return apiFetch("/api/tools/pending", {
+    method: "POST",
+    body: JSON.stringify({ tools }),
   });
 }
 
 export function getPendingTools() {
-  return apiFetch("/api/admin/tools/pending", {}, true);
+  return apiFetch("/api/tools/pending");
 }
 
 export function approveTool(id) {
-  return apiFetch(`/api/admin/tools/${id}/approve`, { method: "POST" }, true);
+  return apiFetch(`/api/tools/${id}/approve`, { method: "POST" });
 }
 
 export function denyTool(id) {
-  return apiFetch(`/api/admin/tools/${id}/deny`, { method: "POST" }, true);
-}
-
-export function queryLlm(prompt) {
-  return apiFetch(
-    "/api/admin/query-llm",
-    { method: "POST", body: JSON.stringify({ prompt }) },
-    true
-  );
+  return apiFetch(`/api/tools/${id}/deny`, { method: "POST" });
 }

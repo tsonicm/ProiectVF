@@ -1,0 +1,82 @@
+[
+  {
+    "id": "0301b802-7d26-4f51-999b-0ed54ce28f37",
+    "name": "Z3",
+    "category": "QBF solvers / evaluators",
+    "description": "\"A highly performant SMT solver for various applications.\",Supports SAT/SMT solving,C++",
+    "main_features": "Python API (Z3)",
+    "languages": [
+      "SMT-LIB"
+    ],
+    "license": "Proprietary",
+    "last_known_update_or_version": "2024-07",
+    "url": "https://github.com/Z3Prover/z3",
+    "relevance_score": 95,
+    "status": "pending",
+    "created_at": "2026-01-17T18:04:21.701299Z"
+  },
+  {
+    "id": "d2d1b25b-29f2-4c04-b1ea-0b61ec6a5da8",
+    "name": "Frama-C",
+    "category": "Functional correctness",
+    "description": "\"Static analyzer for C/C++ code to detect bugs and security vulnerabilities.\",Detailed analysis of memory safety,pointer errors,and concurrency issues,C",
+    "main_features": "C++",
+    "languages": [
+      "SMT"
+    ],
+    "license": "Proprietary",
+    "last_known_update_or_version": "2025-03",
+    "url": "https://www.frama-c.com/",
+    "relevance_score": 90,
+    "status": "pending",
+    "created_at": "2026-01-17T18:04:22.597500Z"
+  },
+  {
+    "id": "cdc57ea6-e2ef-4309-a2a3-4818c09349a4",
+    "name": "Relay",
+    "category": "Neural network verification",
+    "description": "\"A framework for verifying neural networks using formal methods.\",Neural network verification",
+    "main_features": "Python",
+    "languages": [
+      "ReLU"
+    ],
+    "license": "Proprietary",
+    "last_known_update_or_version": "2025-01",
+    "url": "https://relay.readthedocs.io/",
+    "relevance_score": 75,
+    "status": "pending",
+    "created_at": "2026-01-17T18:06:38.823010Z"
+  },
+  {
+    "id": "3c44d955-d15a-483c-9328-a0f64a352e8d",
+    "name": "Pathfinder",
+    "category": "Functional correctness",
+    "description": "Formal verification tool that can find inconsistencies in the design of software.,C++,Python",
+    "main_features": "Java",
+    "languages": [
+      ".NET"
+    ],
+    "license": "Embedded systems",
+    "last_known_update_or_version": "2024-11",
+    "url": "https://www.pathfinderdev.com/about; https://github.com/openai/pathfinder-server",
+    "relevance_score": 85,
+    "status": "pending",
+    "created_at": "2026-01-19T18:23:02.931107Z"
+  },
+  {
+    "id": "c8be2e8f-62ae-4a72-ab37-acbf9db01b3b",
+    "name": "QuickCheck",
+    "category": "Functional correctness",
+    "description": "A library for writing test cases that verify the behavior of code through various methods.,C++,Python",
+    "main_features": "Java",
+    "languages": [
+      ".NET"
+    ],
+    "license": "Embedded systems",
+    "last_known_update_or_version": "2025-03",
+    "url": "https://quickcheck.org/",
+    "relevance_score": 90,
+    "status": "pending",
+    "created_at": "2026-01-19T18:23:07.688887Z"
+  }
+]

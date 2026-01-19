@@ -1,52 +1,26 @@
-// src/components/Navbar.jsx
-
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
-  const token = localStorage.getItem("authToken");
+  const { pathname } = useLocation();
+  const onAdmin = pathname.startsWith("/admin/review");
 
   return (
-    <nav className="px-4 py-3 border-b bg-white flex justify-between items-center">
-      <Link to="/" className="font-semibold text-lg">
-        Verification Tools
-      </Link>
-
-      <div className="flex gap-4 items-center">
-
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "font-bold" : "text-gray-600"
-          }
-        >
-          Tools
-        </NavLink>
-
-        {token && (
-          <NavLink
-            to="/admin/review"
-            className={({ isActive }) =>
-              isActive ? "font-bold" : "text-gray-600"
-            }
+    <nav className="border-b bg-white">
+      <div className="mx-auto px-6 py-4 flex items-center justify-end">
+        {onAdmin ? (
+          <Link
+            to="/"
+            className="border rounded-md px-3 py-1 bg-white hover:bg-gray-100"
           >
-            Admin
-          </NavLink>
-        )}
-
-        {!token ? (
-          <Link to="/admin/login" className="border rounded px-3 py-1">
-            Admin Login
+            See approved tools
           </Link>
         ) : (
-          <button
-            className="border rounded px-3 py-1"
-            onClick={() => {
-              localStorage.removeItem("authToken");
-              window.location.href = "/";
-            }}
+          <Link
+            to="/admin/review"
+            className="border rounded-md px-3 py-1 bg-white hover:bg-gray-100"
           >
-            Logout
-          </button>
+            Find new tools
+          </Link>
         )}
       </div>
     </nav>
